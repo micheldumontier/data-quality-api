@@ -1,0 +1,24 @@
+data:
+    type: data-quality-assessment
+    computedOn: drugbank
+    version: 3.0
+    quality-measures:
+        - type: Type-Count
+          subject: Drug
+          value: 7759
+        - type: Type-Count
+          subject: Target
+          value: 4026
+        - type: Type-Relation-Type-Count
+          subject: Drug
+          predicate: targets
+          object: Target
+          value: 14771
+          subject-count: 6516
+          object-count: 4026
+        - type: Average-Number-Of-Attributes
+          subject: Drug
+          value: 101.99
+        - type: Average-Number-Of-Attributes
+          subject: Target
+          value: 41.4

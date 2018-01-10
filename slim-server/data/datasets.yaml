@@ -1,0 +1,13 @@
+datasets:
+    - name: DrugBank
+      version: 3.0
+      id: https://fairsharing.org/biodbcore-000304
+    - name: CHEMBL
+      version: 3.0
+      id: https://fairsharing.org/biodbcore-000015 
+    - name: KEGG
+      version: test
+      id: https://fairsharing.org/biodbcore-000663
+    - name: wikipathways
+      version: test
+      id: https://fairsharing.org/biodbcore-000155

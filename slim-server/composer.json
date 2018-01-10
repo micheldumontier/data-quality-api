@@ -1,0 +1,8 @@
+{
+  "minimum-stability": "RC",
+  "require": {
+    "slim/slim": "3.*",
+    "mustangostang/spyc": "0.6.2",
+    "symfony/yaml": "*"
+  }
+}

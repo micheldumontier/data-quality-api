@@ -1,0 +1,24 @@
+data:
+    type: data-quality-assessment
+    computedOn: pharmgkb
+    version: 3.0
+    quality-measures:
+        - type: Type-Count
+          subject: Drug
+          value: 3168
+        - type: Type-Count
+          subject: Gene
+          value: 27023
+        - type: Type-Relation-Type-Count
+          subject: Drug
+          predicate: gene
+          object: Gene
+          value: 5939
+          subject-count: 863
+          object-count: 1254
+        - type: Average-Number-Of-Attributes
+          subject: Drug
+          value: 33.7
+        - type: Average-Number-Of-Attributes
+          subject: Gene
+          value: 52.5

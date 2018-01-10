@@ -3,17 +3,17 @@ info:
   title: Data Quality API
   version: 0.1.0
   description: A prototype API to obtain data measures on selected resources
-  termsOfService: 'http://github.com/micheldumontier/data-quality-api'
+  termsOfService: http://github.com/micheldumontier/data-quality-api
   contact:
     name: Michel Dumontier
-    x-id: 'http://github.com/micheldumontier/data-quality-api'
+    x-id: http://github.com/micheldumontier
     x-role: responsible developer
-x-externalResources:
-  - x-url: 'http://github.com/micheldumontier/data-quality-api'
+externalDocs:
+  - description: github repo for data quality API
+    url: http://github.com/micheldumontier/data-quality-api
     x-type: api documentation
-    x-description: github repo for data quality API
 servers:
-  - url: 'http://localhost'
+  - url: http://purl.org/translator/dqa-api
 tags:
   - name: translator
 paths:
@@ -27,9 +27,9 @@ paths:
           description: A list of evaluated datasets
           x-responseValueType:
             - x-path: datasets.id
-              x-valueType: 'http://identifiers.org/fairsharing/'
+              x-valueType: http://identifiers.org/fairsharing/
           content:
-            application/yaml:
+            'application/yaml':
               schema:
                 type: array
                 items:
@@ -38,17 +38,17 @@ paths:
     get:
       operationId: getQualityAssessmentByDatasetID
       summary: Get quality assessment for a specific dataset
-      parameters:
+      parameters: 
         - name: id
           in: query
           schema:
             type: string
-          x-valueType: 'http://identifiers.org/fairsharing/'
+          x-valueType: http://identifiers.org/fairsharing/
       responses:
         '200':
           description: The quality assessment for a dataset
           content:
-            application/yaml:
+            'application/yaml':
               schema:
                 $ref: '#/components/schemas/QualityAssessment'
 components:
@@ -58,7 +58,7 @@ components:
       properties:
         id:
           type: string
-        name:
+        name: 
           type: string
         qa:
           type: string
@@ -76,7 +76,7 @@ components:
     QualityMeasurement:
       type: object
       properties:
-        id:
+        id: 
           type: string
         value:
           type: string

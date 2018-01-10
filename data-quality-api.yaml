@@ -6,12 +6,12 @@ info:
   termsOfService: http://github.com/micheldumontier/data-quality-api
   contact:
     name: Michel Dumontier
-    x-id: http://github.com/micheldumontier
+    x-id: http://github.com/micheldumontier/data-quality-api
     x-role: responsible developer
 externalDocs:
-  - description: github repo for data quality API
-    url: http://github.com/micheldumontier/data-quality-api
-    x-type: api documentation
+  description: github repo for data quality API
+  url: http://github.com/micheldumontier/data-quality-api
+  x-type: api documentation
 servers:
   - url: http://purl.org/translator/dqa-api
 tags:

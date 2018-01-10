@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: Data Quality API
+  version: 0.1.0
+  description: A prototype API to obtain data measures on selected resources
+  termsOfService: 'http://github.com/micheldumontier/data-quality-api'
+  contact:
+    name: Michel Dumontier
+    x-id: 'http://github.com/micheldumontier/data-quality-api'
+    x-role: responsible developer
+x-externalResources:
+  - x-url: 'http://github.com/micheldumontier/data-quality-api'
+    x-type: api documentation
+    x-description: github repo for data quality API
+servers:
+  - url: 'http://localhost'
+tags:
+  - name: translator
+paths:
+  /datasets:
+    get:
+      summary: Get a list of evaluated datasets
+      description: Obtain a list of evaluated datasets
+      operationId: getDatasets
+      responses:
+        '200':
+          description: A list of evaluated datasets
+          x-responseValueType:
+            - x-path: datasets.id
+              x-valueType: 'http://identifiers.org/fairsharing/'
+          content:
+            application/yaml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dataset'
+  /qa:
+    get:
+      operationId: getQualityAssessmentByDatasetID
+      summary: Get quality assessment for a specific dataset
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          x-valueType: 'http://identifiers.org/fairsharing/'
+      responses:
+        '200':
+          description: The quality assessment for a dataset
+          content:
+            application/yaml:
+              schema:
+                $ref: '#/components/schemas/QualityAssessment'
+components:
+  schemas:
+    Dataset:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        qa:
+          type: string
+    QualityAssessment:
+      type: object
+      properties:
+        id:
+          type: string
+        dataset:
+          type: string
+        measures:
+          type: array
+          items:
+            $ref: '#/components/schemas/QualityMeasurement'
+    QualityMeasurement:
+      type: object
+      properties:
+        id:
+          type: string
+        value:
+          type: string
+        type:
+          type: string

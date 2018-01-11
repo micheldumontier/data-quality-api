@@ -8,3 +8,6 @@ docker build -t data-quality-api .
 
 ### Run
 docker run --name data-quality-api -d -p 80:80 --rm data-quality-api
+
+### Log
+docker logs data-quality-api -f
